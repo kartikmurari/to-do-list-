@@ -28,6 +28,7 @@ function addTask() {
 
     // Create new list item
     const li = document.createElement("li");
+    li.classList.add("task-item");
 
     // Add task text
     li.textContent = taskText;
