@@ -111,3 +111,12 @@ taskInput.addEventListener(
         }
     }
 );
+checkbox.addEventListener(
+
+    "change",
+
+    function() {
+
+        li.classList.toggle("completed");
+    }
+);
