@@ -13,6 +13,10 @@ const taskList = document.getElementById("taskList");
 // Add Task Function
 // =====================================
 
+// =====================================
+// Add Task Function
+// =====================================
+
 function addTask() {
 
     // Get input value
@@ -26,17 +30,58 @@ function addTask() {
         return;
     }
 
-    // Create new list item
+    // Create list item
     const li = document.createElement("li");
+
+    // Add animation class
     li.classList.add("task-item");
 
-    // Add task text
-    li.textContent = taskText;
 
-    // Append task to list
+    // =====================================
+    // Create Checkbox
+    // =====================================
+
+    const checkbox = document.createElement("input");
+
+    checkbox.type = "checkbox";
+
+
+    // =====================================
+    // Create Task Text
+    // =====================================
+
+    const span = document.createElement("span");
+
+    span.textContent = taskText;
+
+
+    // =====================================
+    // Checkbox Event
+    // =====================================
+
+    checkbox.addEventListener(
+
+        "change",
+
+        function() {
+
+            li.classList.toggle("completed");
+        }
+    );
+
+
+    // =====================================
+    // Append Elements
+    // =====================================
+
+    li.appendChild(checkbox);
+
+    li.appendChild(span);
+
     taskList.appendChild(li);
 
-    // Clear input field
+
+    // Clear input
     taskInput.value = "";
 }
 

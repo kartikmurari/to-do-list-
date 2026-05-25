@@ -226,3 +226,17 @@ button:hover {
 
     animation: popIn 0.5s ease;
 }
+/* =========================
+   Completed Task Style
+========================= */
+
+.completed {
+
+    text-decoration: line-through;
+
+    opacity: 0.6;
+
+    background: #d1fae5 !important;
+
+    color: #065f46;
+}
