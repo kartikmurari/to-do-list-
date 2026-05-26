@@ -120,3 +120,101 @@ checkbox.addEventListener(
         li.classList.toggle("completed");
     }
 );
+// =====================================
+// Add Task Function
+// =====================================
+
+function addTask() {
+
+    // Get input value
+    const taskText = taskInput.value.trim();
+
+    // Prevent empty task
+    if (taskText === "") {
+
+        alert("Please enter a task");
+
+        return;
+    }
+
+    // Create list item
+    const li = document.createElement("li");
+
+    li.classList.add("task-item");
+
+
+    // =====================================
+    // Create Checkbox
+    // =====================================
+
+    const checkbox = document.createElement("input");
+
+    checkbox.type = "checkbox";
+
+
+    // =====================================
+    // Create Task Text
+    // =====================================
+
+    const span = document.createElement("span");
+
+    span.textContent = taskText;
+
+
+    // =====================================
+    // Create Delete Button
+    // =====================================
+
+    const deleteBtn = document.createElement("button");
+
+    deleteBtn.textContent = "Delete";
+
+    deleteBtn.classList.add("delete-btn");
+
+
+    // =====================================
+    // Complete Task Event
+    // =====================================
+
+    checkbox.addEventListener(
+
+        "change",
+
+        function() {
+
+            li.classList.toggle("completed");
+        }
+    );
+
+
+    // =====================================
+    // Delete Task Event
+    // =====================================
+
+    deleteBtn.addEventListener(
+
+        "click",
+
+        function() {
+
+            li.remove();
+        }
+    );
+
+
+    // =====================================
+    // Append Elements
+    // =====================================
+
+    li.appendChild(checkbox);
+
+    li.appendChild(span);
+
+    li.appendChild(deleteBtn);
+
+    taskList.appendChild(li);
+
+
+    // Clear Input
+    taskInput.value = "";
+}
