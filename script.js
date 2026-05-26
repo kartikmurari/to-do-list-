@@ -190,18 +190,23 @@ function addTask() {
     // =====================================
     // Delete Task Event
     // =====================================
+deleteBtn.addEventListener(
 
-    deleteBtn.addEventListener(
+    "click",
 
-        "click",
+    function() {
 
-        function() {
+        // Add delete animation
+        li.classList.add("delete-animation");
+
+        // Remove task after animation
+        setTimeout(function() {
 
             li.remove();
-        }
-    );
 
-
+        }, 500);
+    }
+);
     // =====================================
     // Append Elements
     // =====================================
